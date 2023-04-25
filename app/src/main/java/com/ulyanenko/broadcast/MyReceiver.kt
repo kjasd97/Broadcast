@@ -11,6 +11,11 @@ class MyReceiver: BroadcastReceiver() {
 
         when (intent?.action){
 
+            "loaded" ->{
+                val percent = intent.getIntExtra("percent", 0)
+                Toast.makeText(context, "Loaded $percent", Toast.LENGTH_SHORT).show()
+            }
+
             ACTION_CLICKED->{
                 Toast.makeText(context, "You clicked", Toast.LENGTH_SHORT).show()
             }
